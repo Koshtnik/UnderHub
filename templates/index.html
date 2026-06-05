@@ -1,25 +1,31 @@
-<head>
-    <!doctype html>
+<!doctype html>
 <html lang="ru">
+<head>
     <meta charset="utf-8">
+    <title>Underhub</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
-
 <body>
 
 
-<form class="poisk">
-    <input type="text" class="poisk-input" placeholder="Истинный посик ">
+<form class="poisk" action="/search" method="GET">
+    <input type="text" name="query" class="poisk-input" placeholder="Истинный поиск " required>
     <button class="poisk-button" type="submit">Найти</button>
 </form>
 
-<a href="/" class ="home-ref"> <img class ="home-button" src="/static/imgs/logo.png"> </a>
+<a href="/" class="home-ref">
+    <img class="home-button" src="/static/imgs/logo.png" alt="Главная">
+</a>
+
 <div class="fon-2">
 
-
-
+    {% for i in text %}
+        <div class="ramka">
+            <div class="zagolovok">{{ i.zagolowok }}</div>
+            <p class="text">{{ i.text }}</p>
+        </div>
+    {% endfor %}
 </div>
 
-
-
 </body>
+</html>

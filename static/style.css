@@ -46,7 +46,24 @@ display: block;
 
 .fon-2 {background-color: #1e1e24;
 margin: 0px 150px 0px 100px;
-width: calc(100vw - 400px);min-height: 10000px;
+width: calc(100vw - 400px);min-height: 100vh;
 position: relative;
 z-index: 1;
 }
+.ramka {background: transparent;  border: 4px solid #a0a0a0;
+outline: 2px solid #505050;
+outline-offset: 2px;
+padding: 10px 10px;
+color: white;
+font-family: 'Determination';
+display: inline-block;
+width: 800px;
+margin: 40px 30px 30px 140px;
+height:auto}
+
+@font-face {
+font-family: 'Determination';
+src: url('/static/fonts/Determination.otf') format('opentype');
+}
+.zagolovok {text-align:center;font-size:40px; }
+.text {font-size:22px; line-height: 1.5;}
