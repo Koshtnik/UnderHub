@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Результаты поиска: {{ query }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+
+<form class="poisk" action="/search" method="GET">
+    <input type="text" name="query" class="poisk-input" placeholder="Истинный поиск " value="{{ query }}" required>
+    <button class="poisk-button" type="submit">Найти</button>
+</form>
+
+<a href="/" class="home-ref">
+    <img class="home-button" src="/static/imgs/logo.png" alt="Главная">
+</a>
+
+<div class="fon-2">
+    <div class="ramka">
+        {% if result.error %}
+            <div class="zagolovok" style="color: yellow;">Ошибка!</div>
+            <p class="text">{{ result.error }}</p>
+        {% else %}
+            <div class="zagolovok">{{ result.title }}</div>
+
+                <p class="text">{{ result.text }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
